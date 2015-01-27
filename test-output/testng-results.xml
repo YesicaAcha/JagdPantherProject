@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="JagdPantherSuite" duration-ms="4307" started-at="2015-01-27T14:28:21Z" finished-at="2015-01-27T14:28:26Z">
+    <groups>
+    </groups>
+    <test name="Login Test" duration-ms="4307" started-at="2015-01-27T14:28:21Z" finished-at="2015-01-27T14:28:26Z">
+      <class name="tests.TestSuit">
+        <test-method status="PASS" signature="LoginApplication()[pri:0, instance:tests.TestSuit@2aaf7cc2]" name="LoginApplication" is-config="true" duration-ms="9792" started-at="2015-01-27T10:28:12Z" finished-at="2015-01-27T10:28:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginApplication -->
+        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:tests.TestSuit@2aaf7cc2]" name="terminateBrowser" is-config="true" duration-ms="2225" started-at="2015-01-27T10:28:26Z" finished-at="2015-01-27T10:28:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- tests.TestSuit -->
+      <class name="tests.ProgramsTest">
+        <test-method status="PASS" signature="createNewProgramTest()[pri:0, instance:tests.ProgramsTest@28f67ac7]" name="createNewProgramTest" duration-ms="4295" started-at="2015-01-27T10:28:21Z" finished-at="2015-01-27T10:28:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewProgramTest -->
+      </class> <!-- tests.ProgramsTest -->
+    </test> <!-- Login Test -->
+  </suite> <!-- JagdPantherSuite -->
+</testng-results>

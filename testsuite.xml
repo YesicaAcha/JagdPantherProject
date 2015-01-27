@@ -1,0 +1,8 @@
+<suite name="JagdPantherSuite">
+ 	<test name = "Login Test">
+		<classes>
+ 			<class name="tests.TestSuit" />
+ 			<class name="tests.ProgramsTest" />
+ 		</classes>
+	</test>
+</suite>
