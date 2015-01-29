@@ -1,13 +1,12 @@
 package pages.programs;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 
 import pages.NavigationPage;
 
-public class AddProgramPage extends NavigationPage{
+public class NewProgramPage extends NavigationPage{
 
 	@FindBy(id="form:inputName")
 	WebElement inputName;
@@ -26,14 +25,15 @@ public class AddProgramPage extends NavigationPage{
 
 
 	//Set Program's name in inputName textbox
-	public AddProgramPage setProgramName(String strName){
+	public NewProgramPage setProgramName(String strName){
+		inputName.click();
 		inputName.clear();
 		inputName.sendKeys(strName);
 		return this;
 	}
 
 	//Set Program's title in inputTitle textbox
-	public AddProgramPage setProgramTitle(String strTitle, String strName) throws InterruptedException{
+	public NewProgramPage setProgramTitle(String strTitle) throws InterruptedException{
 		inputTitle.click();
 		//Thread.sleep(2000);
 		//driver.navigate().refresh();
@@ -53,9 +53,9 @@ public class AddProgramPage extends NavigationPage{
 	}
 
 	//Set Program's description in inputDescription textbox
-	public AddProgramPage setProgramDescription(String strDescription){
-		inputName.clear();
-		inputName.sendKeys(strDescription);
+	public NewProgramPage setProgramDescription(String strDescription){
+		inputDescription.clear();
+		inputDescription.sendKeys(strDescription);
 		return this;
 	}
 

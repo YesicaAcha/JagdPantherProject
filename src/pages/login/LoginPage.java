@@ -65,6 +65,6 @@ public class LoginPage {
 	}
 	//Close browser windows
 	public void terminateBrowser(){
-		driver.quit();
+		SeleniumDriverManager.getManager().quitDriver();
 	}
 }
