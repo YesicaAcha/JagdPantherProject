@@ -5,15 +5,15 @@
     <classes>
       <class name="tests.StagesTest">
         <methods>
-          <include name="verifyNewStageIsCreated" invocation-numbers="0 1"/>
+          <include name="verifyNewStageIsCreated"/>
         </methods>
       </class> <!-- tests.StagesTest -->
-      <class name="tests.TestSuit">
+      <class name="tests.StartTest">
         <methods>
-          <include name="terminateBrowser"/>
-          <include name="LoginApplication"/>
+          <include name="quit"/>
+          <include name="init"/>
         </methods>
-      </class> <!-- tests.TestSuit -->
+      </class> <!-- tests.StartTest -->
     </classes>
   </test> <!-- Login Test(failed) -->
 </suite> <!-- Failed suite [JagdPantherSuite] -->

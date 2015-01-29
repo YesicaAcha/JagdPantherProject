@@ -1,20 +1,19 @@
 package tests;
 
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import pages.HomePage;
-import pages.programs.ProgramDetailsPage;
+import framework.pages.HomePage;
+import framework.pages.programs.ProgramDetailsPage;
+import framework.utils.DataProviderClass;
 
+/**
+ * Title: 
+ * ID: 
+ * @author Yesica Acha
+ *
+ */
 public class ProgramsTest {
-
-	@DataProvider(name = "ProgramCreation")
-	public Object[][] programData() {
-		return new Object[][] {{"ProgramName1","ProgramTitle1","ProgramDescription1"},
-				{"ProgramName1","ProgramTitle1","ProgramDescription1"}};
-
-	}
 
 	/**
 	 * This test case verifies a new program is created 
@@ -23,9 +22,8 @@ public class ProgramsTest {
 	 * @param description
 	 * @throws Exception
 	 */
-	@Test  (dataProvider = "ProgramCreation")
+	@Test  (dataProvider = "ProgramCreation", dataProviderClass = DataProviderClass.class)
 	public void verifyNewProgramIsCreated(String name, String title, String description) throws Exception{
-
 
 		//Create Home Page object
 		HomePage HomePage = new HomePage();
@@ -41,6 +39,6 @@ public class ProgramsTest {
 		.clickSaveButton();
 
 		Assert.assertTrue(jagdPantherProgramDetailsPage.getProgramName().contains(name));
-
 	}
+	
 }

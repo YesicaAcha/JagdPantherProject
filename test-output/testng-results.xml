@@ -1,64 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="JagdPantherSuite" duration-ms="13914" started-at="2015-01-29T00:31:05Z" finished-at="2015-01-29T00:31:19Z">
+  <suite name="JagdPantherSuite" duration-ms="7919" started-at="2015-01-29T15:03:17Z" finished-at="2015-01-29T15:03:25Z">
     <groups>
     </groups>
-    <test name="Login Test" duration-ms="13914" started-at="2015-01-29T00:31:05Z" finished-at="2015-01-29T00:31:19Z">
-      <class name="tests.TestSuit">
-        <test-method status="PASS" signature="LoginApplication()[pri:0, instance:tests.TestSuit@7e0babb1]" name="LoginApplication" is-config="true" duration-ms="8424" started-at="2015-01-28T20:30:56Z" finished-at="2015-01-28T20:31:05Z">
+    <test name="Login Test" duration-ms="7919" started-at="2015-01-29T15:03:17Z" finished-at="2015-01-29T15:03:25Z">
+      <class name="tests.StartTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:tests.StartTest@7cf10a6f]" name="init" is-config="true" duration-ms="10287" started-at="2015-01-29T11:03:07Z" finished-at="2015-01-29T11:03:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginApplication -->
-        <test-method status="PASS" signature="terminateBrowser()[pri:0, instance:tests.TestSuit@7e0babb1]" name="terminateBrowser" is-config="true" duration-ms="2161" started-at="2015-01-28T20:31:19Z" finished-at="2015-01-28T20:31:21Z">
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="quit()[pri:0, instance:tests.StartTest@7cf10a6f]" name="quit" is-config="true" duration-ms="1774" started-at="2015-01-29T11:03:25Z" finished-at="2015-01-29T11:03:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- terminateBrowser -->
-      </class> <!-- tests.TestSuit -->
+        </test-method> <!-- quit -->
+      </class> <!-- tests.StartTest -->
       <class name="tests.StagesTest">
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String)[pri:0, instance:tests.StagesTest@4ec6a292]" name="verifyNewStageIsCreated" duration-ms="3290" started-at="2015-01-28T20:31:06Z" data-provider="StageDataXlsx" finished-at="2015-01-28T20:31:09Z">
+        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.StagesTest@2a18f23c]" name="verifyNewStageIsCreated" duration-ms="4078" started-at="2015-01-29T11:03:17Z" data-provider="StageDataTxt" finished-at="2015-01-29T11:03:21Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Name1AB]]>
+                <![CDATA[StageName1A]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Title1A]]>
+                <![CDATA[StageTitle1A]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[StageDecription1A]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNewStageIsCreated -->
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String)[pri:0, instance:tests.StagesTest@4ec6a292]" name="verifyNewStageIsCreated" duration-ms="5069" started-at="2015-01-28T20:31:09Z" data-provider="StageDataXlsx" finished-at="2015-01-28T20:31:14Z">
+        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.StagesTest@2a18f23c]" name="verifyNewStageIsCreated" duration-ms="3820" started-at="2015-01-29T11:03:21Z" data-provider="StageDataTxt" finished-at="2015-01-29T11:03:25Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Name2AB]]>
+                <![CDATA[StageName2A]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Title2A]]>
+                <![CDATA[StageTitle2A]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNewStageIsCreated -->
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String)[pri:0, instance:tests.StagesTest@4ec6a292]" name="verifyNewStageIsCreated" duration-ms="4437" started-at="2015-01-28T20:31:14Z" data-provider="StageDataXlsx" finished-at="2015-01-28T20:31:19Z">
-          <params>
-            <param index="0">
+            <param index="2">
               <value>
-                <![CDATA[Name3A]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Title3A]]>
+                <![CDATA[StageDescription2A]]>
               </value>
             </param>
           </params>
