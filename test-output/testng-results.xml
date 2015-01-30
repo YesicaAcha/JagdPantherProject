@@ -1,65 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="JagdPantherSuite" duration-ms="7919" started-at="2015-01-29T15:03:17Z" finished-at="2015-01-29T15:03:25Z">
+  <suite name="Default suite" duration-ms="601" started-at="2015-01-30T21:10:43Z" finished-at="2015-01-30T21:10:44Z">
     <groups>
     </groups>
-    <test name="Login Test" duration-ms="7919" started-at="2015-01-29T15:03:17Z" finished-at="2015-01-29T15:03:25Z">
-      <class name="tests.StartTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:tests.StartTest@7cf10a6f]" name="init" is-config="true" duration-ms="10287" started-at="2015-01-29T11:03:07Z" finished-at="2015-01-29T11:03:17Z">
+    <test name="Default test" duration-ms="601" started-at="2015-01-30T21:10:43Z" finished-at="2015-01-30T21:10:44Z">
+      <class name="tests.DBTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.DBTest@28f67ac7]" name="setUp" is-config="true" duration-ms="521" started-at="2015-01-30T17:10:43Z" finished-at="2015-01-30T17:10:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- init -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:tests.StartTest@7cf10a6f]" name="quit" is-config="true" duration-ms="1774" started-at="2015-01-29T11:03:25Z" finished-at="2015-01-29T11:03:27Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="test()[pri:0, instance:tests.DBTest@28f67ac7]" name="test" duration-ms="64" started-at="2015-01-30T17:10:44Z" finished-at="2015-01-30T17:10:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- quit -->
-      </class> <!-- tests.StartTest -->
-      <class name="tests.StagesTest">
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.StagesTest@2a18f23c]" name="verifyNewStageIsCreated" duration-ms="4078" started-at="2015-01-29T11:03:17Z" data-provider="StageDataTxt" finished-at="2015-01-29T11:03:21Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[StageName1A]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[StageTitle1A]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[StageDecription1A]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.DBTest@28f67ac7]" name="tearDown" is-config="true" duration-ms="0" started-at="2015-01-30T17:10:44Z" finished-at="2015-01-30T17:10:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyNewStageIsCreated -->
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.StagesTest@2a18f23c]" name="verifyNewStageIsCreated" duration-ms="3820" started-at="2015-01-29T11:03:21Z" data-provider="StageDataTxt" finished-at="2015-01-29T11:03:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[StageName2A]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[StageTitle2A]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[StageDescription2A]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNewStageIsCreated -->
-      </class> <!-- tests.StagesTest -->
-    </test> <!-- Login Test -->
-  </suite> <!-- JagdPantherSuite -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.DBTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

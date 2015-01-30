@@ -39,6 +39,7 @@ public class ProgramsTest {
 		.clickSaveButton();
 
 		Assert.assertTrue(jagdPantherProgramDetailsPage.getProgramName().contains(name));
+		 
 	}
 	
 }
