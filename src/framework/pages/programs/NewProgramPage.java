@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 
 
+
 import framework.pages.NavigationPage;
 
 public class NewProgramPage extends NavigationPage{
@@ -48,6 +49,14 @@ public class NewProgramPage extends NavigationPage{
 	public NewProgramPage setProgramDescription(String strDescription){
 		inputDescription.clear();
 		inputDescription.sendKeys(strDescription);
+		return this;
+	}
+	
+	public NewProgramPage setNewProgramInformation(String strName, String strTitle, String strDescription) throws InterruptedException{
+		setProgramName(strName);
+		setProgramTitle(strTitle);
+		setProgramDescription(strDescription);
+		
 		return this;
 	}
 

@@ -14,25 +14,29 @@ public class DataProviderClass {
 	
 	@DataProvider(name = "ProgramCreation")
 	public static Object[][] programData() {
-		return new Object[][] {{"ProgramName2","ProgramTitle2","ProgramDescription2"},
-							   {"ProgramName3","ProgramTitle3","ProgramDescription3"}};
+		return new Object[][] {{"ProgramName2A","ProgramTitle2","ProgramDescription2"},
+							   {"ProgramName3A","ProgramTitle3","ProgramDescription3"}};
 	}
 	
-	@DataProvider(name="StageDataTxt")
+	@DataProvider(name = "UserData")
+	public static Object[][] userData() {
+		return new Object[][] {{"98764554","ProgramTitle2","ProgramDescription2","csdom@comp.com"},
+							   {"98464531","ProgramTitle3","ProgramDescription3","csafdom@coafmp.com"}};
+	}
+	
+	@DataProvider(name="UserDataTxt")
     public static Object[][] data() throws Exception {
         HashMap<String,String[]> dataSet= new ReadTextFile("C:\\Users\\Yesica Acha\\workspace\\JagdPanther\\src\\framework\\utils\\testdata\\config.txt").getData();
         String search1Strings[]=dataSet.get("search1");
         String search2Strings[]=dataSet.get("search2");
-        String search3Strings[]=dataSet.get("search3");
         int size =search1Strings.length;
    
-        Object[][] parameters = new Object[size][3];  
+        Object[][] parameters = new Object[size][2];  
         for(int i=0;i<size;i++)
         {
         	parameters[i][0]=search1Strings[i];
         	parameters[i][1]=search2Strings[i];
-        	parameters[i][2]=search3Strings[i];
-        	
+        	        	
         }
         return parameters;
     }
@@ -49,4 +53,6 @@ public class DataProviderClass {
 		//Call read file method of the class to read data
 		return objExcelFile.readExcel(filePath,"ExportExcel.xlsx","StageData");		
 	}
+	
+	
 }

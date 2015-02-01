@@ -21,7 +21,7 @@ public class NewStagePage extends NavigationPage{
 
 	@FindBy(id="form:inputDescription")
 	WebElement inputDescription;
-	
+
 	@FindBy(id="form:inputGrade")
 	WebElement inputGrade;
 
@@ -30,7 +30,7 @@ public class NewStagePage extends NavigationPage{
 
 	@FindBy(id="form:j_id_1l")
 	WebElement cancelButton;
-	
+
 	/*click Añadir button in StagesPage*/
 	public NewStagePage setStageType(String strStageType){
 		stageTypeLabel.sendKeys(strStageType);  
@@ -58,13 +58,21 @@ public class NewStagePage extends NavigationPage{
 		inputDescription.sendKeys(strStageDescription);
 		return this;
 	}
-	
+
 	//Set Stage's grade in inputGrade textbox
-		public NewStagePage setStageGrade(String strStageGrade){
-			inputGrade.clear();
-			inputGrade.sendKeys(strStageGrade);
-			return this;
-		}
+	public NewStagePage setStageGrade(String strStageGrade){
+		inputGrade.clear();
+		inputGrade.sendKeys(strStageGrade);
+		return this;
+	}
+
+	//Set Stage's information in New Stage form
+	public NewStagePage setNewNormalStageInformation(String strStageName, String strStageTitle,String strStageDescription){
+		setStageTitle(strStageTitle);
+		setStageName(strStageName);
+		setStageDescription(strStageDescription);
+		return this;
+	}
 
 	//Click Save Button
 	public StagesPage clickSaveButton(){

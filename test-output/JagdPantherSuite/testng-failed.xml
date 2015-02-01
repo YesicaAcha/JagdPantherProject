@@ -3,17 +3,24 @@
 <suite name="Failed suite [JagdPantherSuite]">
   <test name="Login Test(failed)">
     <classes>
-      <class name="tests.StagesTest">
-        <methods>
-          <include name="verifyNewStageIsCreated"/>
-        </methods>
-      </class> <!-- tests.StagesTest -->
       <class name="tests.StartTest">
         <methods>
-          <include name="quit"/>
           <include name="init"/>
         </methods>
       </class> <!-- tests.StartTest -->
+      <class name="tests.VerifyUserCreation">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="verifyNewUserIsCreated" invocation-numbers="0 1"/>
+        </methods>
+      </class> <!-- tests.VerifyUserCreation -->
+      <class name="tests.VerifyProgramCreation">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- tests.VerifyProgramCreation -->
     </classes>
   </test> <!-- Login Test(failed) -->
 </suite> <!-- Failed suite [JagdPantherSuite] -->

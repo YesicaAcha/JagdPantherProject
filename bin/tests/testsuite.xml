@@ -2,7 +2,9 @@
  	<test name = "Login Test">
 		<classes>
  			<class name="tests.StartTest" />
- 			<class name="tests.StagesTest" />		
+ 			<class name="tests.VerifyProgramCreation" />
+ 			<class name="tests.VerifyStageCreation" />
+ 			<class name="tests.VerifyUserCreation" />		
  		</classes>
 	</test>
 </suite>
