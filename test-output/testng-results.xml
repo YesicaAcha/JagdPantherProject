@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="JagdPantherSuite" duration-ms="40024" started-at="2015-02-01T23:43:14Z" finished-at="2015-02-01T23:43:54Z">
+  <suite name="JagdPantherSuite" duration-ms="33367" started-at="2015-02-02T18:22:23Z" finished-at="2015-02-02T18:22:57Z">
     <groups>
     </groups>
-    <test name="Login Test" duration-ms="40024" started-at="2015-02-01T23:43:14Z" finished-at="2015-02-01T23:43:54Z">
+    <test name="Login Test" duration-ms="33367" started-at="2015-02-02T18:22:23Z" finished-at="2015-02-02T18:22:57Z">
       <class name="tests.VerifyUserCreation">
-        <test-method status="PASS" signature="verifyNewUserIsCreated(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="verifyNewUserIsCreated" duration-ms="4889" started-at="2015-02-01T19:43:44Z" data-provider="UserData" finished-at="2015-02-01T19:43:48Z">
+        <test-method status="PASS" signature="verifyNewUserIsCreated(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="verifyNewUserIsCreated" duration-ms="5265" started-at="2015-02-02T14:22:46Z" data-provider="UserData" finished-at="2015-02-02T14:22:51Z">
           <params>
             <param index="0">
               <value>
@@ -33,7 +33,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNewUserIsCreated -->
-        <test-method status="PASS" signature="verifyNewUserIsCreated(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="verifyNewUserIsCreated" duration-ms="5333" started-at="2015-02-01T19:43:48Z" data-provider="UserData" finished-at="2015-02-01T19:43:54Z">
+        <test-method status="PASS" signature="verifyNewUserIsCreated(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="verifyNewUserIsCreated" duration-ms="5308" started-at="2015-02-02T14:22:51Z" data-provider="UserData" finished-at="2015-02-02T14:22:56Z">
           <params>
             <param index="0">
               <value>
@@ -61,19 +61,19 @@
         </test-method> <!-- verifyNewUserIsCreated -->
       </class> <!-- tests.VerifyUserCreation -->
       <class name="tests.VerifyProgramCreation">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="setUp" is-config="true" duration-ms="494" started-at="2015-02-01T19:43:14Z" finished-at="2015-02-01T19:43:14Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="setUp" is-config="true" duration-ms="374" started-at="2015-02-02T14:22:23Z" finished-at="2015-02-02T14:22:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="setUp" is-config="true" duration-ms="72" started-at="2015-02-01T19:43:14Z" finished-at="2015-02-01T19:43:14Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="setUp" is-config="true" duration-ms="73" started-at="2015-02-02T14:22:24Z" finished-at="2015-02-02T14:22:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="setUp" is-config="true" duration-ms="28" started-at="2015-02-01T19:43:14Z" finished-at="2015-02-01T19:43:14Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="setUp" is-config="true" duration-ms="33" started-at="2015-02-02T14:22:24Z" finished-at="2015-02-02T14:22:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="test(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="test" duration-ms="6629" started-at="2015-02-01T19:43:14Z" data-provider="ProgramCreation" finished-at="2015-02-01T19:43:21Z">
+        <test-method status="PASS" signature="test(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="test" duration-ms="5243" started-at="2015-02-02T14:22:24Z" data-provider="ProgramCreation" finished-at="2015-02-02T14:22:29Z">
           <params>
             <param index="0">
               <value>
@@ -94,7 +94,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method status="PASS" signature="test(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="test" duration-ms="6334" started-at="2015-02-01T19:43:21Z" data-provider="ProgramCreation" finished-at="2015-02-01T19:43:27Z">
+        <test-method status="PASS" signature="test(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="test" duration-ms="5062" started-at="2015-02-02T14:22:29Z" data-provider="ProgramCreation" finished-at="2015-02-02T14:22:34Z">
           <params>
             <param index="0">
               <value>
@@ -115,31 +115,31 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method status="PASS" signature="closeConnection()[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="closeConnection" is-config="true" duration-ms="5" started-at="2015-02-01T19:43:54Z" finished-at="2015-02-01T19:43:54Z">
+        <test-method status="PASS" signature="closeConnection()[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="closeConnection" is-config="true" duration-ms="73" started-at="2015-02-02T14:22:56Z" finished-at="2015-02-02T14:22:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeConnection -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="tearDown" is-config="true" duration-ms="6" started-at="2015-02-01T19:43:54Z" finished-at="2015-02-01T19:43:54Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="tearDown" is-config="true" duration-ms="90" started-at="2015-02-02T14:22:56Z" finished-at="2015-02-02T14:22:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="tearDown" is-config="true" duration-ms="6" started-at="2015-02-01T19:43:54Z" finished-at="2015-02-01T19:43:54Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="tearDown" is-config="true" duration-ms="85" started-at="2015-02-02T14:22:56Z" finished-at="2015-02-02T14:22:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.VerifyProgramCreation -->
       <class name="tests.StartTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:tests.StartTest@7e0babb1]" name="init" is-config="true" duration-ms="13425" started-at="2015-02-01T19:43:00Z" finished-at="2015-02-01T19:43:14Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:tests.StartTest@7e0babb1]" name="init" is-config="true" duration-ms="9163" started-at="2015-02-02T14:22:14Z" finished-at="2015-02-02T14:22:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:tests.StartTest@7e0babb1]" name="quit" is-config="true" duration-ms="2334" started-at="2015-02-01T19:43:54Z" finished-at="2015-02-01T19:43:56Z">
+        <test-method status="PASS" signature="quit()[pri:0, instance:tests.StartTest@7e0babb1]" name="quit" is-config="true" duration-ms="3519" started-at="2015-02-02T14:22:57Z" finished-at="2015-02-02T14:23:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
       </class> <!-- tests.StartTest -->
       <class name="tests.VerifyStageCreation">
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="verifyNewStageIsCreated" duration-ms="4323" started-at="2015-02-01T19:43:29Z" data-provider="StageDataXlsx" finished-at="2015-02-01T19:43:33Z">
+        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="verifyNewStageIsCreated" duration-ms="3247" started-at="2015-02-02T14:22:35Z" data-provider="StageDataXlsx" finished-at="2015-02-02T14:22:38Z">
           <params>
             <param index="0">
               <value>
@@ -160,7 +160,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNewStageIsCreated -->
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="verifyNewStageIsCreated" duration-ms="4672" started-at="2015-02-01T19:43:33Z" data-provider="StageDataXlsx" finished-at="2015-02-01T19:43:38Z">
+        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="verifyNewStageIsCreated" duration-ms="3678" started-at="2015-02-02T14:22:38Z" data-provider="StageDataXlsx" finished-at="2015-02-02T14:22:42Z">
           <params>
             <param index="0">
               <value>
@@ -181,7 +181,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyNewStageIsCreated -->
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="verifyNewStageIsCreated" duration-ms="6013" started-at="2015-02-01T19:43:38Z" data-provider="StageDataXlsx" finished-at="2015-02-01T19:43:44Z">
+        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="verifyNewStageIsCreated" duration-ms="3795" started-at="2015-02-02T14:22:42Z" data-provider="StageDataXlsx" finished-at="2015-02-02T14:22:46Z">
           <params>
             <param index="0">
               <value>
