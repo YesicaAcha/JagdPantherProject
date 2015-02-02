@@ -3,11 +3,6 @@ package framework.pages.programs;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
-
-
-
-
 import framework.pages.NavigationPage;
 
 public class NewProgramPage extends NavigationPage{
@@ -26,7 +21,6 @@ public class NewProgramPage extends NavigationPage{
 
 	@FindBy(id="form:j_id_19")
 	WebElement cancelButton;
-
 
 	//Set Program's name in inputName textbox
 	public NewProgramPage setProgramName(String strName){
@@ -52,11 +46,11 @@ public class NewProgramPage extends NavigationPage{
 		return this;
 	}
 	
+	//Set program's information in new program page
 	public NewProgramPage setNewProgramInformation(String strName, String strTitle, String strDescription) throws InterruptedException{
 		setProgramName(strName);
 		setProgramTitle(strTitle);
 		setProgramDescription(strDescription);
-		
 		return this;
 	}
 
@@ -70,7 +64,5 @@ public class NewProgramPage extends NavigationPage{
 	public ProgramsPage clickCancelButton(){
 		cancelButton.click();
 		return new ProgramsPage();
-	}
-
-	
+	}	
 }
