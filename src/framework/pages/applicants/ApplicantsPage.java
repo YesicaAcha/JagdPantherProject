@@ -1,5 +1,7 @@
 package framework.pages.applicants;
 
-public class ApplicantsPage {
+import framework.pages.INavigationPane;
+
+public class ApplicantsPage implements INavigationPane {
 
 }

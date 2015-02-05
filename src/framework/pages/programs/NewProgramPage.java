@@ -2,65 +2,51 @@ package framework.pages.programs;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import framework.pages.NavigationPage;
+import framework.pages.AbstractNewProgramStageBasePage;
+import framework.pages.INavigationPane;
 
-public class NewProgramPage extends NavigationPage{
+public class NewProgramPage extends AbstractNewProgramStageBasePage implements INavigationPane {
 
-	@FindBy(id="form:inputName")
-	WebElement inputName;
-
-	@FindBy(id="form:inputTitle")
-	WebElement inputTitle;
-
-	@FindBy(id="form:inputDescription")
-	WebElement inputDescription;
-
-	@FindBy(xpath=".//*[@id='form:j_id_18']")
+	@FindBy(id = "form:j_id_18")
 	WebElement saveButton;
 
-	@FindBy(id="form:j_id_19")
+	@FindBy(id = "form:j_id_19")
 	WebElement cancelButton;
 
-	//Set Program's name in inputName textbox
-	public NewProgramPage setProgramName(String strName){
-		inputName.clear();
-		inputName.sendKeys(strName);
-		return this;
-	}
-
-	//Set Program's title in inputTitle textbox
-	public NewProgramPage setProgramTitle(String strTitle) throws InterruptedException{
-		inputTitle.click();
-		Thread.sleep(1000);
-		//wait.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='form:inputTitle' and contains(@value, " + strName + ")])"))));
-		inputTitle.clear();
-		inputTitle.sendKeys(strTitle);
-		return this;
-	}
-
-	//Set Program's description in inputDescription textbox
-	public NewProgramPage setProgramDescription(String strDescription){
-		inputDescription.clear();
-		inputDescription.sendKeys(strDescription);
-		return this;
+	public NewProgramPage() {
+		PageFactory.initElements(driver, this);
 	}
 	
-	//Set program's information in new program page
+	/**
+	 * Set program's information in new program page
+	 * @param strName: Program's Name
+	 * @param strTitle: Program's Title
+	 * @param strDescription: Program's Description
+	 * @return the same New Program Page
+	 * @throws InterruptedException
+	 */
 	public NewProgramPage setNewProgramInformation(String strName, String strTitle, String strDescription) throws InterruptedException{
-		setProgramName(strName);
-		setProgramTitle(strTitle);
-		setProgramDescription(strDescription);
+		setDescription(strDescription);
+		setTitle(strTitle);
+		setName(strName);
 		return this;
 	}
 
-	//Click Save Button
+	/**
+	 * Click Save Button
+	 * @return New Program Details page
+	 */
 	public ProgramDetailsPage clickSaveButton(){
 		saveButton.click();
 		return new ProgramDetailsPage();
 	}
 
-	//Click Cancel Button
+	/**
+	 * Click Cancel Button
+	 * @return new program Page
+	 */
 	public ProgramsPage clickCancelButton(){
 		cancelButton.click();
 		return new ProgramsPage();

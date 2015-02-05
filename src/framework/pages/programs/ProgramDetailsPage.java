@@ -2,10 +2,11 @@ package framework.pages.programs;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import framework.pages.NavigationPage;
+import framework.pages.INavigationPane;
 
-public class ProgramDetailsPage extends NavigationPage{
+public class ProgramDetailsPage implements INavigationPane {
 
 	//"Regresar a la lista de programas" button
 	@FindBy(id="j_id_t:j_id_y")
@@ -27,6 +28,13 @@ public class ProgramDetailsPage extends NavigationPage{
 	@FindBy(id="j_id_t:inputDescription_display")
 	WebElement programDescription;
 
+	//Program's Name Input
+	@FindBy(id="j_id_t:j_id_16") 
+	WebElement inputProgramName;
+	
+	public ProgramDetailsPage() {
+		PageFactory.initElements(driver, this);
+	}
 
 	//Click "Regresar a la lista de programas" to return Programs page
 	public ProgramsPage returnProgramsPage(){
@@ -57,8 +65,8 @@ public class ProgramDetailsPage extends NavigationPage{
 	//Change program's description in ProgramDetails page
 	public ProgramDetailsPage changeProgramDescription(String newProgramDescription){
 		programDescription.click();
-		programDescription.clear();
-		programDescription.sendKeys(newProgramDescription);
+		inputProgramName.clear();
+		inputProgramName.sendKeys(newProgramDescription);
 		return this;
 	}
 

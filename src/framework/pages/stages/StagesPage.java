@@ -2,16 +2,21 @@ package framework.pages.stages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import framework.pages.NavigationPage;
+import framework.pages.INavigationPane;
 
-public class StagesPage extends NavigationPage{
+public class StagesPage implements INavigationPane {
 
 	@FindBy(id="j_id_t:j_id_10")
 	WebElement newStageButton;
 	
 	@FindBy(id="j_id_t:stages_data")
 	WebElement stagesTable;
+	
+	public StagesPage() {
+		PageFactory.initElements(driver, this);
+	}
 
 	//click Añadir button in StagesPage
 	public NewStagePage clickNewStageButton(){

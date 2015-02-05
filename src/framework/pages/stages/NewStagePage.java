@@ -2,25 +2,19 @@ package framework.pages.stages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import framework.pages.NavigationPage;
+import framework.pages.AbstractNewProgramStageBasePage;
+import framework.pages.INavigationPane;
+
 /**
  * Page for New Stage Creation
  * @author Yesica Acha
  *
  */
-public class NewStagePage extends NavigationPage{
+public class NewStagePage extends AbstractNewProgramStageBasePage implements INavigationPane {
 	@FindBy(id="form:stageTypeId_label")
 	WebElement stageTypeLabel;
-
-	@FindBy(id="form:inputName")
-	WebElement inputName;
-
-	@FindBy(id="form:inputTitle")
-	WebElement inputTitle;
-
-	@FindBy(id="form:inputDescription")
-	WebElement inputDescription;
 
 	@FindBy(id="form:inputGrade")
 	WebElement inputGrade;
@@ -31,57 +25,59 @@ public class NewStagePage extends NavigationPage{
 	@FindBy(id="form:j_id_1l")
 	WebElement cancelButton;
 
-	/*click Añadir button in StagesPage*/
-	public NewStagePage setStageType(String strStageType){
+	public NewStagePage() {
+		PageFactory.initElements(driver, this);
+	}
+	
+	/**
+	 * click Añadir button in StagesPage
+	 * @param strStageType: Stage's Type
+	 * @return
+	 */
+	public NewStagePage setStageType(String strStageType) {
 		stageTypeLabel.sendKeys(strStageType);  
 		return this;
 	}
 
-	//Set Stage's name in inputName textbox
-	public NewStagePage setStageName(String strStageName){
-		inputName.clear();
-		inputName.sendKeys(strStageName);
-		return this;
-	}
-
-	//Set Stage's title in inputTitle textbox
-	public NewStagePage setStageTitle(String strStageTitle){
-		inputTitle.click();
-		inputTitle.clear();
-		inputTitle.sendKeys(strStageTitle);
-		return this;
-	}
-
-	//Set Stage's description in inputDescription textbox
-	public NewStagePage setStageDescription(String strStageDescription){
-		inputDescription.clear();
-		inputDescription.sendKeys(strStageDescription);
-		return this;
-	}
-
-	//Set Stage's grade in inputGrade textbox
-	public NewStagePage setStageGrade(String strStageGrade){
+	/**
+	 * Set Stage's grade in inputGrade textbox
+	 * @param strStageGrade: Stage's Grade
+	 * @return
+	 */
+	public NewStagePage setStageGrade(String strStageGrade) {
 		inputGrade.clear();
 		inputGrade.sendKeys(strStageGrade);
 		return this;
 	}
 
-	//Set Stage's information in New Stage form
-	public NewStagePage setNewNormalStageInformation(String strStageName, String strStageTitle,String strStageDescription){
-		setStageTitle(strStageTitle);
-		setStageName(strStageName);
-		setStageDescription(strStageDescription);
-		return this;
+	/**
+	 * Set Stage's information in New Stage form
+	 * @param strStageName: Stage's Name
+	 * @param strStageTitle: Stage's Title
+	 * @param strStageDescription: Stage's Description
+	 * @return
+	 */
+	public NewStagePage setNewNormalStageInformation(String strStageName, String strStageTitle,String strStageDescription) {
+		setDescription(strStageDescription);
+		setTitle(strStageTitle);
+		setName(strStageName);
+		return this;                                                                                                                                                                                   
 	}
 
-	//Click Save Button
-	public StagesPage clickSaveButton(){
+	/**
+	 * Click Save Button
+	 * @return new Stage Page
+	 */
+	public StagesPage clickSaveButton() {
 		saveButton.click();
 		return new StagesPage();
 	}
 
-	//Click Cancel Button
-	public StagesPage clickCancelButton(){
+	/**
+	 * Click Cancel Button
+	 * @return new Stage Page
+	 */
+	public StagesPage clickCancelButton() {
 		cancelButton.click();
 		return new StagesPage();
 	}

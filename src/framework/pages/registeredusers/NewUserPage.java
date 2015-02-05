@@ -2,11 +2,12 @@ package framework.pages.registeredusers;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import framework.pages.NavigationPage;
+import framework.pages.INavigationPane;
 
 
-public class NewUserPage extends NavigationPage{
+public class NewUserPage implements INavigationPane {
 
 	@FindBy(id="j_id_t:inputCi")
 	WebElement inputCI;
@@ -26,6 +27,9 @@ public class NewUserPage extends NavigationPage{
 	@FindBy(id="j_id_t:j_id_1e")
 	WebElement cancelButton;
 
+	public NewUserPage() {
+		PageFactory.initElements(driver, this);
+	}
 
 	//Set User's CI in inputCI textbox
 	public NewUserPage setUserCI(String strCI){

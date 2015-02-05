@@ -1,5 +1,5 @@
 <suite name="JagdPantherSuite">
- 	<test name = "Login Test">
+ 	<test name = "JagdPantherTests">
 		<classes>
  			<class name="tests.StartTest" />
  			<class name="tests.VerifyProgramCreation" />

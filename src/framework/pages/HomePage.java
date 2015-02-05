@@ -1,6 +1,5 @@
 package framework.pages;
 
-
-public class HomePage extends NavigationPage {
+public class HomePage implements INavigationPane {
 	
 }

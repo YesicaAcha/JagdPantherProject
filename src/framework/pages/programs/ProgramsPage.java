@@ -2,10 +2,11 @@ package framework.pages.programs;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import framework.pages.NavigationPage;
+import framework.pages.INavigationPane;
 
-public class ProgramsPage extends NavigationPage{
+public class ProgramsPage implements INavigationPane {
 
 	//Añadir button
 	@FindBy(id="j_id_y:j_id_1a")
@@ -19,7 +20,13 @@ public class ProgramsPage extends NavigationPage{
 	@FindBy(id="j_id_y:programs:0:j_id_18")
 	WebElement editButton;
 	
-	//Click Añadir in Program Page
+	public ProgramsPage() {
+		PageFactory.initElements(driver, this);
+	}
+	/**
+	 * Click Añadir in Program Page
+	 * @return
+	 */
 	public NewProgramPage clickNewProgramButton(){
 		newProgramButton.click();   
 		return new NewProgramPage();

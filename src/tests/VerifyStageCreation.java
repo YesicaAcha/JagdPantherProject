@@ -54,8 +54,8 @@ public class VerifyStageCreation {
 		//Verify if Stage was created
 		Assert.assertTrue(jagdPantherStagesPage.getStageName().contains(stageName));
 
-		/*Verify id Stage was created in the database*/
-		Assert.assertTrue(db.getStageNameDB(stageName).contains(stageName));
+		//Verify id Stage was created in the database
+		Assert.assertEquals(db.getStageNameDB(stageName), stageName);
 	}
 
 	/*Delete Stage data from table*/

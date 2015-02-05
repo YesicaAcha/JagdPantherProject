@@ -11,10 +11,8 @@ import framework.webdriver.SeleniumDriverManager;
 /**
  * This class represents the login page
  * @author Yesica Acha
- *
- */
+*/
 public class LoginPage {
-
 	WebDriver driver;
 
 	@FindBy(id="j_id_i:userName")
@@ -26,8 +24,7 @@ public class LoginPage {
 	@FindBy(id="j_id_i:j_id_q")
 	WebElement loginButton;
 
-	public LoginPage(){
-
+	public LoginPage() {
 		this.driver = SeleniumDriverManager.getManager().getDriver();
 		PageFactory.initElements(driver, this);
 
@@ -35,46 +32,48 @@ public class LoginPage {
 		driver.get("http://172.20.200.19:8080");
 	}
 
-	/*Set email in email textbox*/
-	public void setEmail(String strEmail){
+	/**
+	 * Set email in email textbox
+	 * @param strEmail: User's email
+	 */
+	public void setEmail(String strEmail) {
 		inputEmail.clear();
 		inputEmail.sendKeys(strEmail);
 	}
 
-	/*Set password in password textbox*/
-	public void setPassword(String strPassword){
+	/**
+	 * Set password in password textbox
+	 * @param strPassword: User's Password
+	 */
+	public void setPassword(String strPassword) {
 		inputPassword.clear();
 		inputPassword.sendKeys(strPassword);
 	}
 
-	/*Click on login button*/
-	public void clickLogin(){
+	/**
+	 * Click on login button
+	 */
+	public void clickLogin() {
 		loginButton.click();
 	}
 
 	/**
 	 * This method is used to login to JagdPanther
-	 * @param strEmail 		User's email
-	 * @param strPasword	User's password
+	 * @param strEmail: 	User's email
+	 * @param strPasword:	User's password
 	 * @return
 	 */
-	public RegisteredUsersPage loginToJagdPanther(String strEmail,String strPasword){
-
-		//Fill user's email
-		this.setEmail(strEmail);
-
-		//Fill password
-		this.setPassword(strPasword);
-
-		//Click Login button
-		this.clickLogin();  
-
+	public RegisteredUsersPage loginToJagdPanther(String strEmail,String strPasword) {
+		setEmail(strEmail);
+		setPassword(strPasword);
+		clickLogin();  
 		return new RegisteredUsersPage();
-
 	}
 
-	//Close browser windows
-	public void terminateBrowser(){
+	/**
+	 * Close browser windows
+	 */
+	public void terminateBrowser() {
 		SeleniumDriverManager.getManager().quitDriver();
 	}
 }
