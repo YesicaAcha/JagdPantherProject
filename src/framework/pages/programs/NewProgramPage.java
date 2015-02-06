@@ -38,7 +38,7 @@ public class NewProgramPage extends AbstractNewProgramStageBasePage implements I
 	 * Click Save Button
 	 * @return New Program Details page
 	 */
-	public ProgramDetailsPage clickSaveButton(){
+	public ProgramDetailsPage clickSaveButton() {
 		saveButton.click();
 		return new ProgramDetailsPage();
 	}
@@ -47,7 +47,7 @@ public class NewProgramPage extends AbstractNewProgramStageBasePage implements I
 	 * Click Cancel Button
 	 * @return new program Page
 	 */
-	public ProgramsPage clickCancelButton(){
+	public ProgramsPage clickCancelButton() {
 		cancelButton.click();
 		return new ProgramsPage();
 	}	

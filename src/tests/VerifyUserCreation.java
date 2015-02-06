@@ -52,7 +52,7 @@ public class VerifyUserCreation {
 		Assert.assertTrue(registeredUsersPage.getNewUserName().contains(strName));
 
 		//Verify user information is saved in the database 
-		Assert.assertEquals(db.getUserNameDB(strName), strName);
+		Assert.assertEquals(db.getUserCIDB(strCI), strName);
 	}
 
 	@AfterTest

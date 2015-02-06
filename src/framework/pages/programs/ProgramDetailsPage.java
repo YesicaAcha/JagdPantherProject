@@ -37,33 +37,33 @@ public class ProgramDetailsPage implements INavigationPane {
 	}
 
 	//Click "Regresar a la lista de programas" to return Programs page
-	public ProgramsPage returnProgramsPage(){
+	public ProgramsPage returnProgramsPage() {
 		programListButton.click();
 		return new ProgramsPage();
 	}
 
 	//Get program's code from ProgramDetails page
-	public String getProgramCode(){
+	public String getProgramCode() {
 		return programCode.getText();
 	}
 
 	//Get program's name from ProgramDetails page
-	public String getProgramName(){
+	public String getProgramName() {
 		return programName.getText();
 	}
 
 	//Get program's title from ProgramDetails page
-	public String getProgramTitle(){
+	public String getProgramTitle() {
 		return programTitle.getText();
 	}
 
 	//Get program's description from ProgramDetails page
-	public String getProgramDescription(){
+	public String getProgramDescription() {
 		return programDescription.getText();
 	}
 
 	//Change program's description in ProgramDetails page
-	public ProgramDetailsPage changeProgramDescription(String newProgramDescription){
+	public ProgramDetailsPage changeProgramDescription(String newProgramDescription) {
 		programDescription.click();
 		inputProgramName.clear();
 		inputProgramName.sendKeys(newProgramDescription);

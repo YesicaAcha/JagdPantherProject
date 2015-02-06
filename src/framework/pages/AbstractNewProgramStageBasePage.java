@@ -3,6 +3,11 @@ package framework.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * This is the Base page for creation of a new program or new stage
+ * @author Yesica Acha
+ *
+ */
 public abstract class AbstractNewProgramStageBasePage {
 	@FindBy(id = "form:inputName")
 	WebElement inputName;

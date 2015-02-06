@@ -1,7 +1,6 @@
 package framework.utils;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 import org.testng.annotations.DataProvider;
 
@@ -20,26 +19,9 @@ public class DataProviderClass {
 	
 	@DataProvider(name = "UserData")
 	public static Object[][] userData() {
-		return new Object[][] {{"98764554","ProgramTitle2","ProgramDescription2","csdom@comp.com"},
-							   {"98464531","ProgramTitle3","ProgramDescription3","csafdom@coafmp.com"}};
+		return new Object[][] {{"98764554","Carlos","Guevara","csdom@comp.com"},
+							   {"98464531","Eliana","Naviaj","csafdom@coafmp.com"}};
 	}
-	
-	@DataProvider(name="UserDataTxt")
-    public static Object[][] data() throws Exception {
-        HashMap<String,String[]> dataSet= new ReadTextFile("C:\\Users\\Yesica Acha\\workspace\\JagdPanther\\src\\framework\\utils\\testdata\\config.txt").getData();
-        String search1Strings[]=dataSet.get("search1");
-        String search2Strings[]=dataSet.get("search2");
-        int size =search1Strings.length;
-   
-        Object[][] parameters = new Object[size][2];  
-        for(int i=0;i<size;i++)
-        {
-        	parameters[i][0]=search1Strings[i];
-        	parameters[i][1]=search2Strings[i];
-        	        	
-        }
-        return parameters;
-    }
 	
 	@DataProvider(name = "StageDataXlsx")
 	public static Object[][] stageData() throws IOException {
@@ -52,7 +34,5 @@ public class DataProviderClass {
 
 		//Call read file method of the class to read data
 		return objExcelFile.readExcel(filePath,"ExportExcel.xlsx","StageData");		
-	}
-	
-	
+	}	
 }

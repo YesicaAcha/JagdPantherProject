@@ -1,5 +1,7 @@
 package framework.pages.periods;
 
-public class PeriodsPage {
+import framework.pages.INavigationPane;
+
+public class PeriodsPage implements INavigationPane {
 
 }
