@@ -45,6 +45,29 @@ public class Database {
 	}
 
 	/**
+	 * This method confirms if an element was create on a table and returns its name
+	 * @param tableName
+	 * @param name
+	 * @return
+	 * @throws Exception
+	 */
+	private String getDatafromTable(String tableName, String condition) throws Exception {
+		String value = null;
+		try {
+			String query = "SELECT NAME FROM " + tableName + " WHERE " + condition; 
+			
+			// Get the contents of userinfo table from DB
+			ResultSet res = stmt.executeQuery(query);
+			while (res.next()) {
+				value = res.getString(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}   
+		return value;
+	}
+	
+	/**
 	 * This method gets the name of the stage if it exists in the database
 	 * @param name: Stage's name
 	 * @return
@@ -75,29 +98,6 @@ public class Database {
 	}
 
 	/**
-	 * This method confirms if an element was create on a table and returns its name
-	 * @param tableName
-	 * @param name
-	 * @return
-	 * @throws Exception
-	 */
-	private String getDatafromTable(String tableName, String condition) throws Exception {
-		String value = null;
-		try {
-			String query = "SELECT NAME FROM " + tableName +" WHERE " + condition; 
-			
-			// Get the contents of userinfo table from DB
-			ResultSet res = stmt.executeQuery(query);
-			while (res.next()) {
-				value = res.getString(1);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}   
-		return value;
-	}
-
-	/**
 	 * Execute a delete statements for post conditions
 	 * @param tableName
 	 * @param condition
@@ -121,6 +121,11 @@ public class Database {
 		executeDelete("jp_user", "CI!= 123");
 	}
 
+	public void creaeNewProgramDB() throws SQLException {
+		String query = "INSERT INTO `PROGRAM` VALUES (2,'Program1','ProgramTitle','ProgramDescription')";
+		stmt.execute(query);
+	}
+	
 	/**
 	 * This method close the connection with the database
 	 * @throws Exception

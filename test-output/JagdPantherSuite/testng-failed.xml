@@ -9,25 +9,13 @@
           <include name="init"/>
         </methods>
       </class> <!-- tests.StartTest -->
-      <class name="tests.VerifyUserCreation">
+      <class name="tests.VerifyProgramEdition">
         <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="verifyNewUserIsCreated" invocation-numbers="0 1"/>
-        </methods>
-      </class> <!-- tests.VerifyUserCreation -->
-      <class name="tests.VerifyStageCreation">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- tests.VerifyStageCreation -->
-      <class name="tests.VerifyProgramCreation">
-        <methods>
-          <include name="setUp"/>
+          <include name="verifyAProgramIsEdited" invocation-numbers="0"/>
           <include name="closeConnection"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- tests.VerifyProgramCreation -->
+      </class> <!-- tests.VerifyProgramEdition -->
     </classes>
   </test> <!-- JagdPantherTests(failed) -->
 </suite> <!-- Failed suite [JagdPantherSuite] -->

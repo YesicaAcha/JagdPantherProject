@@ -8,7 +8,6 @@ import framework.pages.AbstractNewProgramStageBasePage;
 import framework.pages.INavigationPane;
 
 public class NewProgramPage extends AbstractNewProgramStageBasePage implements INavigationPane {
-
 	@FindBy(id = "form:j_id_18")
 	WebElement saveButton;
 
@@ -45,7 +44,7 @@ public class NewProgramPage extends AbstractNewProgramStageBasePage implements I
 
 	/**
 	 * Click Cancel Button
-	 * @return new program Page
+	 * @return New Program Page
 	 */
 	public ProgramsPage clickCancelButton() {
 		cancelButton.click();

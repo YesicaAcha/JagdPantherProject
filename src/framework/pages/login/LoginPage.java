@@ -15,13 +15,13 @@ import framework.webdriver.SeleniumDriverManager;
 public class LoginPage {
 	WebDriver driver;
 
-	@FindBy(id="j_id_i:userName")
+	@FindBy(id = "j_id_i:userName")
 	WebElement inputEmail;
 
-	@FindBy(id="j_id_i:password")
+	@FindBy(id = "j_id_i:password")
 	WebElement inputPassword;
 
-	@FindBy(id="j_id_i:j_id_q")
+	@FindBy(id = "j_id_i:j_id_q")
 	WebElement loginButton;
 
 	public LoginPage() {

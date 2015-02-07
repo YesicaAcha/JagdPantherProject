@@ -13,16 +13,16 @@ import framework.pages.INavigationPane;
  *
  */
 public class NewStagePage extends AbstractNewProgramStageBasePage implements INavigationPane {
-	@FindBy(id="form:stageTypeId_label")
+	@FindBy(id = "form:stageTypeId_label")
 	WebElement stageTypeLabel;
 
-	@FindBy(id="form:inputGrade")
+	@FindBy(id = "form:inputGrade")
 	WebElement inputGrade;
 
-	@FindBy(id="form:j_id_1k")
+	@FindBy(id = "form:j_id_1k")
 	WebElement saveButton;
 
-	@FindBy(id="form:j_id_1l")
+	@FindBy(id = "form:j_id_1l")
 	WebElement cancelButton;
 
 	public NewStagePage() {
@@ -32,7 +32,7 @@ public class NewStagePage extends AbstractNewProgramStageBasePage implements INa
 	/**
 	 * click Añadir button in StagesPage
 	 * @param strStageType: Stage's Type
-	 * @return
+	 * @return The same page
 	 */
 	public NewStagePage setStageType(String strStageType) {
 		stageTypeLabel.sendKeys(strStageType);  
@@ -42,7 +42,7 @@ public class NewStagePage extends AbstractNewProgramStageBasePage implements INa
 	/**
 	 * Set Stage's grade in inputGrade textbox
 	 * @param strStageGrade: Stage's Grade
-	 * @return
+	 * @return The same Page
 	 */
 	public NewStagePage setStageGrade(String strStageGrade) {
 		inputGrade.clear();
@@ -55,7 +55,7 @@ public class NewStagePage extends AbstractNewProgramStageBasePage implements INa
 	 * @param strStageName: Stage's Name
 	 * @param strStageTitle: Stage's Title
 	 * @param strStageDescription: Stage's Description
-	 * @return
+	 * @return The same page
 	 */
 	public NewStagePage setNewNormalStageInformation(String strStageName, String strStageTitle,String strStageDescription) {
 		setDescription(strStageDescription);
@@ -66,7 +66,7 @@ public class NewStagePage extends AbstractNewProgramStageBasePage implements INa
 
 	/**
 	 * Click Save Button
-	 * @return new Stage Page
+	 * @return Stage Page
 	 */
 	public StagesPage clickSaveButton() {
 		saveButton.click();
@@ -75,7 +75,7 @@ public class NewStagePage extends AbstractNewProgramStageBasePage implements INa
 
 	/**
 	 * Click Cancel Button
-	 * @return new Stage Page
+	 * @return Stage Page
 	 */
 	public StagesPage clickCancelButton() {
 		cancelButton.click();

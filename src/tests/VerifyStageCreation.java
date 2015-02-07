@@ -17,7 +17,6 @@ import framework.utils.DataProviderClass;
  *
  */
 public class VerifyStageCreation {
-
 	Database db = new Database();
 
 	/*Connect to the database*/
@@ -34,7 +33,6 @@ public class VerifyStageCreation {
 	 * @param stageDescription
 	 * @throws Exception
 	 */	
-
 	@Test (dataProvider = "StageDataXlsx", dataProviderClass = DataProviderClass.class)
 	public void verifyNewStageIsCreated(String stageName, String stageTitle, String stageDescription) throws Exception{
 

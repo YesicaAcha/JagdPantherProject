@@ -1,79 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="7" passed="7">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="JagdPantherSuite" duration-ms="29272" started-at="2015-02-05T19:59:44Z" finished-at="2015-02-05T20:00:13Z">
+  <suite name="JagdPantherSuite" duration-ms="12188" started-at="2015-02-07T16:26:20Z" finished-at="2015-02-07T16:26:33Z">
     <groups>
     </groups>
-    <test name="JagdPantherTests" duration-ms="29272" started-at="2015-02-05T19:59:44Z" finished-at="2015-02-05T20:00:13Z">
-      <class name="tests.VerifyUserCreation">
-        <test-method status="PASS" signature="verifyNewUserIsCreated(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="verifyNewUserIsCreated" duration-ms="4484" started-at="2015-02-05T16:00:03Z" data-provider="UserData" finished-at="2015-02-05T16:00:08Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[98764554]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Carlos]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Guevara]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[csdom@comp.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNewUserIsCreated -->
-        <test-method status="PASS" signature="verifyNewUserIsCreated(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="verifyNewUserIsCreated" duration-ms="5369" started-at="2015-02-05T16:00:08Z" data-provider="UserData" finished-at="2015-02-05T16:00:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[98464531]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Eliana]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Navia]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[csafdom@coafmp.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNewUserIsCreated -->
-      </class> <!-- tests.VerifyUserCreation -->
-      <class name="tests.VerifyProgramCreation">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="setUp" is-config="true" duration-ms="355" started-at="2015-02-05T15:59:44Z" finished-at="2015-02-05T15:59:44Z">
+    <test name="JagdPantherTests" duration-ms="12188" started-at="2015-02-07T16:26:20Z" finished-at="2015-02-07T16:26:33Z">
+      <class name="tests.VerifyProgramEdition">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifyProgramEdition@3f0ee7cb]" name="setUp" is-config="true" duration-ms="361" started-at="2015-02-07T12:26:20Z" finished-at="2015-02-07T12:26:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="setUp" is-config="true" duration-ms="81" started-at="2015-02-05T15:59:44Z" finished-at="2015-02-05T15:59:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="setUp" is-config="true" duration-ms="22" started-at="2015-02-05T15:59:44Z" finished-at="2015-02-05T15:59:44Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyANewProgramIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="verifyANewProgramIsCreated" duration-ms="3377" started-at="2015-02-05T15:59:44Z" data-provider="ProgramCreation" finished-at="2015-02-05T15:59:48Z">
+        <test-method status="PASS" signature="verifyAProgramIsEdited(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyProgramEdition@3f0ee7cb]" name="verifyAProgramIsEdited" duration-ms="6099" started-at="2015-02-07T12:26:21Z" data-provider="ProgramCreation" finished-at="2015-02-07T12:26:27Z">
           <params>
             <param index="0">
               <value>
@@ -93,8 +31,8 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyANewProgramIsCreated -->
-        <test-method status="PASS" signature="verifyANewProgramIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="verifyANewProgramIsCreated" duration-ms="3627" started-at="2015-02-05T15:59:48Z" data-provider="ProgramCreation" finished-at="2015-02-05T15:59:51Z">
+        </test-method> <!-- verifyAProgramIsEdited -->
+        <test-method status="PASS" signature="verifyAProgramIsEdited(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyProgramEdition@3f0ee7cb]" name="verifyAProgramIsEdited" duration-ms="5708" started-at="2015-02-07T12:26:27Z" data-provider="ProgramCreation" finished-at="2015-02-07T12:26:33Z">
           <params>
             <param index="0">
               <value>
@@ -114,95 +52,22 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyANewProgramIsCreated -->
-        <test-method status="PASS" signature="closeConnection()[pri:0, instance:tests.VerifyProgramCreation@3cb5cdba]" name="closeConnection" is-config="true" duration-ms="79" started-at="2015-02-05T16:00:13Z" finished-at="2015-02-05T16:00:13Z">
+        </test-method> <!-- verifyAProgramIsEdited -->
+        <test-method status="PASS" signature="closeConnection()[pri:0, instance:tests.VerifyProgramEdition@3f0ee7cb]" name="closeConnection" is-config="true" duration-ms="3" started-at="2015-02-07T12:26:33Z" finished-at="2015-02-07T12:26:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeConnection -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="tearDown" is-config="true" duration-ms="29" started-at="2015-02-05T16:00:13Z" finished-at="2015-02-05T16:00:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.VerifyUserCreation@7d417077]" name="tearDown" is-config="true" duration-ms="89" started-at="2015-02-05T16:00:13Z" finished-at="2015-02-05T16:00:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.VerifyProgramCreation -->
+      </class> <!-- tests.VerifyProgramEdition -->
       <class name="tests.StartTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:tests.StartTest@7e0babb1]" name="init" is-config="true" duration-ms="9835" started-at="2015-02-05T15:59:34Z" finished-at="2015-02-05T15:59:44Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:tests.StartTest@66d33a]" name="init" is-config="true" duration-ms="10711" started-at="2015-02-07T12:26:10Z" finished-at="2015-02-07T12:26:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:tests.StartTest@7e0babb1]" name="quit" is-config="true" duration-ms="1809" started-at="2015-02-05T16:00:13Z" finished-at="2015-02-05T16:00:15Z">
+        <test-method status="PASS" signature="quit()[pri:0, instance:tests.StartTest@66d33a]" name="quit" is-config="true" duration-ms="2062" started-at="2015-02-07T12:26:33Z" finished-at="2015-02-07T12:26:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
       </class> <!-- tests.StartTest -->
-      <class name="tests.VerifyStageCreation">
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="verifyNewStageIsCreated" duration-ms="3044" started-at="2015-02-05T15:59:52Z" data-provider="StageDataXlsx" finished-at="2015-02-05T15:59:55Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Name1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Title1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Description1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNewStageIsCreated -->
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="verifyNewStageIsCreated" duration-ms="3291" started-at="2015-02-05T15:59:55Z" data-provider="StageDataXlsx" finished-at="2015-02-05T15:59:59Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Name2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Title2]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Description2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNewStageIsCreated -->
-        <test-method status="PASS" signature="verifyNewStageIsCreated(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.VerifyStageCreation@5a39699c]" name="verifyNewStageIsCreated" duration-ms="4299" started-at="2015-02-05T15:59:59Z" data-provider="StageDataXlsx" finished-at="2015-02-05T16:00:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Name3]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Title3]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Description3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyNewStageIsCreated -->
-      </class> <!-- tests.VerifyStageCreation -->
     </test> <!-- JagdPantherTests -->
   </suite> <!-- JagdPantherSuite -->
 </testng-results>

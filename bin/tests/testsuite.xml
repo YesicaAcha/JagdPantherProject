@@ -2,9 +2,7 @@
  	<test name = "JagdPantherTests">
 		<classes>
  			<class name="tests.StartTest" />
- 			<class name="tests.VerifyProgramCreation" />
- 			<class name="tests.VerifyStageCreation" />
- 			<class name="tests.VerifyUserCreation" />		
+ 			<class name="tests.VerifyProgramEdition" />
  		</classes>
 	</test>
 </suite>

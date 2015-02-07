@@ -10,7 +10,7 @@ import framework.pages.login.LoginPage;
 public class StartTest {
 	
 	@BeforeSuite
-	public void init(){
+	public void init() {
 
 		//Create LoginPage object
 		LoginPage jagdPantherLogin = new LoginPage();
@@ -20,11 +20,9 @@ public class StartTest {
 	}
 	
 	@AfterSuite
-	public void quit(){
+	public void quit() {
 		/*Create HomePage object*/
 		HomePage HomePage = new HomePage();
-		
-		
 		HomePage
 			.logout()				/*logout application*/
 			.terminateBrowser();	/*quit browser*/  

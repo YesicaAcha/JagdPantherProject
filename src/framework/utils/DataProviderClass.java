@@ -11,18 +11,31 @@ import org.testng.annotations.DataProvider;
  */
 public class DataProviderClass {
 	
+	/**
+	 * This method return an Object with data to create Programs
+	 * @return
+	 */
 	@DataProvider(name = "ProgramCreation")
 	public static Object[][] programData() {
 		return new Object[][] {{"ProgramName2A","ProgramTitle2","ProgramDescription2"},
 							   {"ProgramName3A","ProgramTitle3","ProgramDescription3"}};
 	}
 	
+	/**
+	 * This method return an Object with data to create Users
+	 * @return
+	 */
 	@DataProvider(name = "UserData")
 	public static Object[][] userData() {
 		return new Object[][] {{"98764554","Carlos","Guevara","csdom@comp.com"},
 							   {"98464531","Eliana","Naviaj","csafdom@coafmp.com"}};
 	}
 	
+	/**
+	 * This method return an Object with data to create Stages
+	 * @return
+	 * @throws IOException
+	 */
 	@DataProvider(name = "StageDataXlsx")
 	public static Object[][] stageData() throws IOException {
 		

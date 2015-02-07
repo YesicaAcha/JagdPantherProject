@@ -10,31 +10,29 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ReadExcelFile {
-
+ public class ReadExcelFile {
 	@SuppressWarnings("resource")
-	public Object[][] readExcel(String filePath,String fileName,String sheetName) throws IOException{
+	public Object[][] readExcel(String filePath, String fileName, String sheetName) throws IOException {
 
-		/*Create a object of File class to open xlsx file*/
-		File file = new File(filePath+"\\"+fileName);
+		//Create a object of File class to open xlsx file
+		File file = new File(filePath + "\\" + fileName);
 
-		/*Create an object of FileInputStream class to read excel file*/
+		//Create an object of FileInputStream class to read excel file
 		FileInputStream inputStream = new FileInputStream(file);
-
 		Workbook excelWorkbook = null;
 
 		//Find the file extension by spliting file name in substring and getting only extension name
 		String fileExtensionName = fileName.substring(fileName.indexOf("."));
 
 		//Check condition if the file is xlsx file
-		if(fileExtensionName.equals(".xlsx")){
+		if(fileExtensionName.equals(".xlsx")) {
 
 			//If it is xlsx file then create object of XSSFWorkbook class
 			excelWorkbook = new XSSFWorkbook(inputStream);
 		}
 
 		//Check condition if the file is xls file
-		else if(fileExtensionName.equals(".xls")){
+		else if (fileExtensionName.equals(".xls")) {
 
 			//If it is xls file then create object of XSSFWorkbook class
 			excelWorkbook = new HSSFWorkbook(inputStream);
@@ -44,20 +42,20 @@ public class ReadExcelFile {
 		Sheet excelSheet = excelWorkbook.getSheet(sheetName);
 
 		//Find number of rows in excel file
-		int rowCount = excelSheet.getLastRowNum()-excelSheet.getFirstRowNum();
-		Object[][] tabArray = new Object[rowCount][excelSheet.getRow(0).getLastCellNum()];
+		int rowCount = excelSheet.getLastRowNum() - excelSheet.getFirstRowNum();
+		Object[][] data = new Object[rowCount][excelSheet.getRow(0).getLastCellNum()];
 
 		//Create a loop over all the rows of excel file to read it
-		for (int i = 1; i < rowCount+1; i++) {
+		for (int i = 1; i < rowCount + 1; i++) {
 			Row row = excelSheet.getRow(i);
 
 			//Create a loop to print cell values in a row
 			for (int j = 0; j < row.getLastCellNum(); j++) {
 
 				/*Print excel data in console*/
-				tabArray[i-1][j]=row.getCell(j).getStringCellValue()+"";
+				data[i - 1][j] = row.getCell(j).getStringCellValue() + "";
 			}
 		}
-		return tabArray;
+		return data;
 	}
 }
