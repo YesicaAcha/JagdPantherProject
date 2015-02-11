@@ -5,8 +5,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
+import java.util.Map;
+
+import framework.utils.ExternalData;
 
 public class Database {
+	ExternalData externalData = new ExternalData();
 
 	// Connection object
 	static Connection con = null;
@@ -51,12 +56,10 @@ public class Database {
 	 * @return
 	 * @throws Exception
 	 */
-	private String getDatafromTable(String tableName, String condition) throws Exception {
+	private String getDataFromTable(String columnName, String tableName, String condition) throws Exception {
 		String value = null;
 		try {
-			String query = "SELECT NAME FROM " + tableName + " WHERE " + condition; 
-			
-			// Get the contents of userinfo table from DB
+			String query = "SELECT " + columnName + " FROM " + tableName + " " + condition; 
 			ResultSet res = stmt.executeQuery(query);
 			while (res.next()) {
 				value = res.getString(1);
@@ -66,7 +69,7 @@ public class Database {
 		}   
 		return value;
 	}
-	
+
 	/**
 	 * This method gets the name of the stage if it exists in the database
 	 * @param name: Stage's name
@@ -74,7 +77,7 @@ public class Database {
 	 * @throws Exception
 	 */
 	public String getStageNameDB(String name) throws Exception {
-		return getDatafromTable("stage", "NAME='" + name + "'");	
+		return getDataFromTable("NAME", "stage", "WHERE NAME='" + name + "'");	
 	}
 
 	/**
@@ -84,9 +87,9 @@ public class Database {
 	 * @throws Exception
 	 */
 	public String getUserCIDB(String ci) throws Exception {
-		return getDatafromTable("jp_user", "CI='" + ci + "'");	
+		return getDataFromTable("NAME", "jp_user", "WHERE CI='" + ci + "'");	
 	}
-	
+
 	/**
 	 * This method gets the name of the program if it exists in the database
 	 * @param name: Program's Name
@@ -94,7 +97,27 @@ public class Database {
 	 * @throws Exception
 	 */
 	public String getProgramNameDB(String name) throws Exception {
-		return getDatafromTable("PROGRAM", "NAME='" + name + "'");
+		return getDataFromTable("NAME", "PROGRAM", "WHERE NAME='" + name + "'");
+	}
+
+	/**
+	 * This method gets the title of the program if it exists in the database
+	 * @param name: Program's Name
+	 * @return
+	 * @throws Exception
+	 */
+	public String getProgramTitleDB(String name) throws Exception {
+		return getDataFromTable("TITLE", "PROGRAM", "WHERE NAME='" + name + "'");
+	}
+
+	/**
+	 * This method gets the description of the program if it exists in the database
+	 * @param name: Program's Name
+	 * @return
+	 * @throws Exception
+	 */
+	public String getProgramDescriptionDB(String name) throws Exception {
+		return getDataFromTable("DESCRIPTION", "PROGRAM", "WHERE NAME='" + name + "'");
 	}
 
 	/**
@@ -107,9 +130,9 @@ public class Database {
 		String query = "DELETE FROM " + tableName + " WHERE " + condition;
 		stmt.execute(query);
 	}
-	
+
 	public void deleteDataFromProgramTable() throws SQLException {
-		executeDelete("PROGRAM", "id>=1");
+		executeDelete("PROGRAM", "id>=0");
 	}
 
 	public void deleteDataFromStageTable() throws SQLException {
@@ -121,11 +144,34 @@ public class Database {
 		executeDelete("jp_user", "CI!= 123");
 	}
 
-	public void creaeNewProgramDB() throws SQLException {
-		String query = "INSERT INTO `PROGRAM` VALUES (2,'Program1','ProgramTitle','ProgramDescription')";
+	public void createProgramsByBD() throws Exception {
+		List<Map<String, String>> programsXLS = externalData.readExternalProgramData();
+		System.out.println("Starting to create Programs......");
+		for (Map<String, String> programInfo : programsXLS) {
+			createNewProgramDB (programInfo.get("ProgramName"), programInfo.get("ProgramTitle"), programInfo.get("ProgramDescription"));
+		}
+		System.out.println("Finishing the creation of Programs......");
+	}
+
+	//TODO: Refactor the code to have createNewElementDB 
+	private void createNewProgramDB(String programName, String programTitle, String programDescription) throws Exception {
+
+		String query = "INSERT INTO `PROGRAM` VALUES ("+ getNextUsableProgramCode() +",'"+programDescription+ "','" + programName+"','" + programTitle + "')";
 		stmt.execute(query);
 	}
-	
+
+	public String getNextUsableProgramCode() throws Exception{
+		String lastCodeDB = getDataFromTable("ID", "program", "ORDER BY ID desc limit 1");
+		System.out.println(lastCodeDB);
+		int code;
+		if (lastCodeDB == null) {
+			code = 1;
+		} else {
+			code = Integer.parseInt(lastCodeDB) + 1;
+		}
+		return code + "";
+	}
+
 	/**
 	 * This method close the connection with the database
 	 * @throws Exception

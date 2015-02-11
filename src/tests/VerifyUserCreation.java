@@ -1,8 +1,9 @@
 package tests;
 
+import org.junit.BeforeClass;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import db.Database;
@@ -10,16 +11,22 @@ import framework.pages.HomePage;
 import framework.pages.registeredusers.NewUserPage;
 import framework.pages.registeredusers.RegisteredUsersPage;
 import framework.utils.DataProviderClass;
+import framework.utils.reporter.JyperionListener;
 
 /**
  * Title: Verify an admin user can create register new users
  * @author Yesica Acha
  *
  */
+@Listeners(JyperionListener.class)
 public class VerifyUserCreation {
 	Database db = new Database();
 
-	@BeforeTest
+	/**
+	 * Connect to the database
+	 * @throws Exception
+	 */
+	@BeforeClass
 	public void setUp() throws Exception {
 		db.setUp();
 	}
@@ -55,7 +62,11 @@ public class VerifyUserCreation {
 		Assert.assertEquals(db.getUserCIDB(strCI), strName);
 	}
 
-	@AfterTest
+	/**
+	 * Delete User data from table
+	 * @throws Exception
+	 */
+	@AfterClass
 	public void tearDown() throws Exception {
 		db.deleteDataFromUserTable();
 		db.tearDown();

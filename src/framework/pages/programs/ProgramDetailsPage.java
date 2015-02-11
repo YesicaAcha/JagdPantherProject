@@ -4,23 +4,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import framework.pages.AbstractProgramGroupsDetailsPage;
 import framework.pages.INavigationPane;
 
-public class ProgramDetailsPage implements INavigationPane {
+public class ProgramDetailsPage extends AbstractProgramGroupsDetailsPage implements INavigationPane {
 	@FindBy(id = "j_id_t:j_id_y")
 	WebElement programListButton;
-
-	@FindBy(id = "j_id_t:idInput")
-	WebElement programCodeLabel;
-
-	@FindBy(id = "j_id_t:nameInput_display") 
-	WebElement programNameLabel;
-
-	@FindBy(id = "j_id_t:inputTitle_display")
-	WebElement programTitleLabel;
-
-	@FindBy(id = "j_id_t:inputDescription_display")
-	WebElement programDescriptionLabel;
 
 	@FindBy(id = "j_id_t:j_id_16") 
 	WebElement inputProgramName;
@@ -31,28 +20,28 @@ public class ProgramDetailsPage implements INavigationPane {
 	@FindBy(id = "j_id_t:j_id_1e") 
 	WebElement inputProgramDescription;
 	
-	@FindBy (xpath = "//button[@type='button']")
-	WebElement saveProgramNameButton;
+	@FindBy (linkText = "Grupos")
+	WebElement groupsButton;
 	
-	@FindBy (xpath = "(//button[@type='button'])[3]")
-	WebElement saveProgramTitleButton;
+	@FindBy (linkText = "Periodos")
+	WebElement periodsButton;
 	
-	@FindBy (xpath = "(//button[@type='button'])[5]")
-	WebElement saveProgramDescriptionButton;
-	
-	@FindBy (xpath = "(//button[@type='button'])[2]")
-	WebElement cancelProgramNameButton;
-	
-	@FindBy (xpath = "(//button[@type='button'])[4]")
-	WebElement cancelProgramTitleButton;
-	
-	@FindBy (xpath = "(//button[@type='button'])[6]")
-	WebElement cancelProgramDescriptionButton;
-	
+	@FindBy(id = "j_id_t:programTabDetails:j_id_23")
+	WebElement addButton;
+		
 	public ProgramDetailsPage() {
 		PageFactory.initElements(driver, this);
 	}
 
+	/**
+	 * This method is used to go to NewGroupPage
+	 * @return NewGroupPage
+	 */
+	public NewGroupPage clickAddButton(){
+		addButton.click();
+		return new NewGroupPage();
+	}
+	
 	/**
 	 * Click "Regresar a la lista de programas" to return Programs page
 	 * @return New Programs Page
@@ -63,46 +52,14 @@ public class ProgramDetailsPage implements INavigationPane {
 	}
 
 	/**
-	 * Get program's code from ProgramDetails page
-	 * @return The code from Program 
-	 */
-	public String getProgramCode() {
-		return programCodeLabel.getText();
-	}
-
-	/**
-	 * Get program's name from ProgramDetails page
-	 * @return The Program Name
-	 */
-	public String getProgramName() {
-		return programNameLabel.getText();
-	}
-
-	/**
-	 * Get program's title from ProgramDetails page
-	 * @return The Program Title
-	 */
-	public String getProgramTitle() {
-		return programTitleLabel.getText();
-	}
-
-	/**
-	 * Get program's description from ProgramDetails page
-	 * @return The Program's Description
-	 */
-	public String getProgramDescription() {
-		return programDescriptionLabel.getText();
-	}
-
-	/**
 	 * Change program's name in ProgramDetails page
 	 * @param newProgramName: Program's Name
 	 */
 	public void modifyProgramName(String newProgramName) {
-		programNameLabel.click();
+		clickNameLabel();
 		inputProgramName.clear();
 		inputProgramName.sendKeys(newProgramName);
-		saveProgramNameButton.click();
+		clickSaveNameButton();
 	}	
 	
 	/**
@@ -110,10 +67,10 @@ public class ProgramDetailsPage implements INavigationPane {
 	 * @param newProgramTitle: Program's Title
 	 */
 	public void modifyProgramTitle(String newProgramTitle) {
-		programTitleLabel.click();
+		clickTitleLabel();
 		inputProgramTitle.clear();
 		inputProgramTitle.sendKeys(newProgramTitle);
-		saveProgramTitleButton.click();
+		clickSaveTitleButton();
 	}
 	
 	/**
@@ -121,10 +78,10 @@ public class ProgramDetailsPage implements INavigationPane {
 	 * @param newProgramDescription: Program's Description
 	 */
 	public void modifyProgramDescription(String newProgramDescription) {
-		programDescriptionLabel.click();
+		clickDescriptionLabel();
 		inputProgramDescription.clear();
 		inputProgramDescription.sendKeys(newProgramDescription);
-		saveProgramDescriptionButton.click();
+		clickSaveDescriptionButton();
 	}
 	
 	/**

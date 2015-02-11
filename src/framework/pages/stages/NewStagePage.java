@@ -58,9 +58,9 @@ public class NewStagePage extends AbstractNewProgramStageBasePage implements INa
 	 * @return The same page
 	 */
 	public NewStagePage setNewNormalStageInformation(String strStageName, String strStageTitle,String strStageDescription) {
+		setName(strStageName);
 		setDescription(strStageDescription);
 		setTitle(strStageTitle);
-		setName(strStageName);
 		return this;                                                                                                                                                                                   
 	}
 

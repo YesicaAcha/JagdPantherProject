@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [JagdPantherSuite]">
-  <test name="JagdPantherTests(failed)">
+  <test name="JagdPanther Tests(failed)">
     <classes>
+      <class name="tests.VerifyStageCreation">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyNewStageIsCreated"/>
+        </methods>
+      </class> <!-- tests.VerifyStageCreation -->
       <class name="tests.StartTest">
         <methods>
           <include name="quit"/>
@@ -11,11 +18,10 @@
       </class> <!-- tests.StartTest -->
       <class name="tests.VerifyProgramEdition">
         <methods>
-          <include name="verifyAProgramIsEdited" invocation-numbers="0"/>
           <include name="closeConnection"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- tests.VerifyProgramEdition -->
     </classes>
-  </test> <!-- JagdPantherTests(failed) -->
+  </test> <!-- JagdPanther Tests(failed) -->
 </suite> <!-- Failed suite [JagdPantherSuite] -->

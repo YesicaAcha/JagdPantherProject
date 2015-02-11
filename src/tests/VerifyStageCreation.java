@@ -1,8 +1,9 @@
 package tests;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import db.Database;
@@ -10,17 +11,22 @@ import framework.pages.HomePage;
 import framework.pages.stages.NewStagePage;
 import framework.pages.stages.StagesPage;
 import framework.utils.DataProviderClass;
+import framework.utils.reporter.JyperionListener;
 
 /**
  * Title: This test case verifies if a new Stage is created
  * @author Yesica Acha
  *
  */
+@Listeners(JyperionListener.class)
 public class VerifyStageCreation {
 	Database db = new Database();
 
-	/*Connect to the database*/
-	@BeforeTest
+	/**
+	 * Connect to the database
+	 * @throws Exception
+	 */
+	@BeforeClass
 	public void setUp() throws Exception {
 		db.setUp();
 
@@ -56,8 +62,11 @@ public class VerifyStageCreation {
 		Assert.assertEquals(db.getStageNameDB(stageName), stageName);
 	}
 
-	/*Delete Stage data from table*/
-	@AfterTest
+	/**
+	 * Delete Stage data from table
+	 * @throws Exception
+	 */
+	@AfterClass
 	public void tearDown() throws Exception {
 		db.deleteDataFromStageTable();
 		db.tearDown();

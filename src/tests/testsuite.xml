@@ -1,8 +1,9 @@
 <suite name="JagdPantherSuite">
- 	<test name = "JagdPantherTests">
+ 	<test name = "JagdPanther Tests">
 		<classes>
  			<class name="tests.StartTest" />
- 			<class name="tests.VerifyProgramEdition" />
+  			<class name="tests.VerifyProgramEdition" />
+  			<class name="tests.VerifyStageCreation" />
  		</classes>
 	</test>
 </suite>

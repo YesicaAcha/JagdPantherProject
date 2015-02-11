@@ -1,8 +1,9 @@
 package tests;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import db.Database;
@@ -10,17 +11,22 @@ import framework.pages.HomePage;
 import framework.pages.programs.NewProgramPage;
 import framework.pages.programs.ProgramDetailsPage;
 import framework.utils.DataProviderClass;
+import framework.utils.reporter.JyperionListener;
 
 /**
  * Title: Verify a user can created a new program
  * ID: 
  * @author Yesica Acha
  */
+@Listeners(JyperionListener.class)
 public class VerifyProgramCreation {
 	Database db = new Database();
 
-	/*Connect to the database*/
-	@BeforeTest
+	/**
+	 * Connect to the database
+	 * @throws Exception
+	 */
+	@BeforeClass
 	public void setUp() throws Exception {
 		db.setUp();
 	}
@@ -48,14 +54,17 @@ public class VerifyProgramCreation {
 				.clickSaveButton();
 
 		//Verify program name is displayed in Program Detail page
-		Assert.assertEquals(programDetails.getProgramName(), name);
+		Assert.assertEquals(programDetails.getName(), name);
 
 		//Verify program is created in the database
 		Assert.assertEquals(db.getProgramNameDB(name), name);
 	}
 
-	/*Delete Stage data from table*/
-	@AfterTest
+	/**
+	 * Delete Stage data from table
+	 * @throws Exception
+	 */
+	@AfterClass
 	public void closeConnection() throws Exception {
 		db.deleteDataFromProgramTable();
 		db.tearDown();
