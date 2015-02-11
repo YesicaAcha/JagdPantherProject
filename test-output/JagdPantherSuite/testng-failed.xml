@@ -3,25 +3,18 @@
 <suite name="Failed suite [JagdPantherSuite]">
   <test name="JagdPanther Tests(failed)">
     <classes>
-      <class name="tests.VerifyStageCreation">
-        <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="verifyNewStageIsCreated"/>
-        </methods>
-      </class> <!-- tests.VerifyStageCreation -->
       <class name="tests.StartTest">
         <methods>
           <include name="quit"/>
           <include name="init"/>
         </methods>
       </class> <!-- tests.StartTest -->
-      <class name="tests.VerifyProgramEdition">
+      <class name="tests.VerifySetGradesToApplicants">
         <methods>
-          <include name="closeConnection"/>
+          <include name="verifyApplicantsGradesCanBeSet"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- tests.VerifyProgramEdition -->
+      </class> <!-- tests.VerifySetGradesToApplicants -->
     </classes>
   </test> <!-- JagdPanther Tests(failed) -->
 </suite> <!-- Failed suite [JagdPantherSuite] -->

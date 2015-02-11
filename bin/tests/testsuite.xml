@@ -2,8 +2,7 @@
  	<test name = "JagdPanther Tests">
 		<classes>
  			<class name="tests.StartTest" />
-  			<class name="tests.VerifyProgramEdition" />
-  			<class name="tests.VerifyStageCreation" />
+  			<class name="tests.VerifySetGradesToApplicants" />
  		</classes>
 	</test>
 </suite>

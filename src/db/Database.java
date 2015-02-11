@@ -152,6 +152,34 @@ public class Database {
 		}
 		System.out.println("Finishing the creation of Programs......");
 	}
+	
+	//TODO Refactor
+	public void createStagesDB() throws SQLException {
+		String query = "INSERT INTO `stage` VALUES (1,'stageDescription',80,'stageName', 'stageTitle', 1);";
+		stmt.execute(query);
+	}
+	
+	public void createGroupDB() throws SQLException {
+		String query = "INSERT INTO `jp_group` VALUES (1,'groupDescription','groupName', 0, 'groupTitle', 1);";
+		stmt.execute(query);
+		query = "INSERT INTO `group_stage` VALUES (1, 1)";
+		stmt.execute(query);
+	}
+	
+	public void createPeriodDB() throws SQLException {
+		String query = "INSERT INTO `jp_period` VALUES (1, NULL,'2015-02-02', 'periodName', 'ACTIVE', 1);";
+		stmt.execute(query);
+		query = "INSERT INTO `stage_value` VALUES (1, 80, 1, 1);";
+		stmt.execute(query);
+		
+	}
+	
+	public void createApplicantDB() throws SQLException{
+		String query = "INSERT INTO `JP_USER` VALUES (4902260,'Applicant',1,0,NULL,NULL,NULL,'yesica@acha.com','applicantLastname','applicantName',NULL,NULL,NULL,NULL,2,NULL,NULL,NULL,NULL,NULL);";
+		stmt.execute(query);
+		query = "INSERT INTO `USER_PERIOD` VALUES (1, 4902260);";
+		stmt.execute(query);
+	}
 
 	//TODO: Refactor the code to have createNewElementDB 
 	private void createNewProgramDB(String programName, String programTitle, String programDescription) throws Exception {
