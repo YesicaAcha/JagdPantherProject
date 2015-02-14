@@ -1,32 +1,30 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import db.Database;
 import framework.pages.HomePage;
-import framework.pages.periods.PeriodsPage;
-import framework.utils.DataProviderClass;
 
 public class VerifySetGradesToApplicants {
 	Database db = new Database();
-	
+
 	/**
 	 * Connect to the database and create a program
 	 * @throws Exception
 	 */
-	@BeforeClass
-	public void setUp() throws Exception {
-		db.setUp();
-		db.createStagesDB();
-		db.createProgramsByBD();
-		db.createGroupDB();
-		db.createPeriodDB();
-		db.createApplicantDB();
-		
-	}
-	
+		@BeforeClass
+		public void setUp() throws Exception {
+			db.setUp();
+			db.createStagesDB();
+			db.createProgramsByBD();
+			db.createGroupDB();
+			db.createPeriodDB();
+			db.createApplicantDB();	
+		}
+
 	/**
 	 * This test case verifies program information is modified and displayed in Program Details Page 
 	 * and this information is saved in the database
@@ -36,25 +34,21 @@ public class VerifySetGradesToApplicants {
 	 * @throws Exception
 	 */
 	@Test
-	public void verifyApplicantsGradesCanBeSet() {
+	public void verifyApplicantsGradesCanBeSet() throws Exception {
 		HomePage HomePage = new HomePage();
+		String grade = "80";
+		String applicantCI = "4900260";
 
 		//Go to ProgramDetailsPage
-//		HomePage
-//				.clickPeriodsLink()
-//				.clickEditPeriodButton()
-//				.clickStagesButton()
-//				.clickGradeButton()
-//				.setGrade("80.0")
-//				.clickSaveButton();
+		HomePage
+		.clickPeriodsLink()
+		.clickEditPeriodButton()
+		.clickStagesButton()
+		.clickGradeButton()
+		.setGrade(grade)
+		.clickSaveButton();
 
-		//Edit porgram information
-		
-		//Verify program information has changed
-		
-
-		//Verify program is created in the database
-		
+		Assert.assertEquals(db.getApplicantGrade(applicantCI), grade);
 	}
 
 	/**
@@ -63,7 +57,7 @@ public class VerifySetGradesToApplicants {
 	 */
 	@AfterClass
 	public void closeConnection() throws Exception {
-		//db.deleteDataFromProgramTable();
+		//db.deleteDataFromDB();
 		db.tearDown();
 	}
 }

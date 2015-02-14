@@ -2,30 +2,30 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="JagdPantherSuite" duration-ms="969" started-at="2015-02-11T18:38:03Z" finished-at="2015-02-11T18:38:04Z">
+  <suite name="JagdPantherSuite" duration-ms="8425" started-at="2015-02-13T17:54:42Z" finished-at="2015-02-13T17:54:51Z">
     <groups>
     </groups>
-    <test name="JagdPanther Tests" duration-ms="969" started-at="2015-02-11T18:38:03Z" finished-at="2015-02-11T18:38:04Z">
+    <test name="JagdPanther Tests" duration-ms="8425" started-at="2015-02-13T17:54:42Z" finished-at="2015-02-13T17:54:51Z">
       <class name="tests.StartTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:tests.StartTest@256216b3]" name="init" is-config="true" duration-ms="10452" started-at="2015-02-11T14:37:53Z" finished-at="2015-02-11T14:38:03Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:tests.StartTest@4b952a2d]" name="init" is-config="true" duration-ms="12629" started-at="2015-02-13T13:54:30Z" finished-at="2015-02-13T13:54:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="quit()[pri:0, instance:tests.StartTest@256216b3]" name="quit" is-config="true" duration-ms="2481" started-at="2015-02-11T14:38:04Z" finished-at="2015-02-11T14:38:07Z">
+        <test-method status="PASS" signature="quit()[pri:0, instance:tests.StartTest@4b952a2d]" name="quit" is-config="true" duration-ms="1707" started-at="2015-02-13T13:54:51Z" finished-at="2015-02-13T13:54:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quit -->
       </class> <!-- tests.StartTest -->
       <class name="tests.VerifySetGradesToApplicants">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifySetGradesToApplicants@ea4a92b]" name="setUp" is-config="true" duration-ms="657" started-at="2015-02-11T14:38:03Z" finished-at="2015-02-11T14:38:04Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.VerifySetGradesToApplicants@2d928643]" name="setUp" is-config="true" duration-ms="1019" started-at="2015-02-13T13:54:42Z" finished-at="2015-02-13T13:54:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="verifyApplicantsGradesCanBeSet()[pri:0, instance:tests.VerifySetGradesToApplicants@ea4a92b]" name="verifyApplicantsGradesCanBeSet" duration-ms="274" started-at="2015-02-11T14:38:04Z" finished-at="2015-02-11T14:38:04Z">
+        <test-method status="PASS" signature="verifyApplicantsGradesCanBeSet()[pri:0, instance:tests.VerifySetGradesToApplicants@2d928643]" name="verifyApplicantsGradesCanBeSet" duration-ms="7364" started-at="2015-02-13T13:54:43Z" finished-at="2015-02-13T13:54:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyApplicantsGradesCanBeSet -->
-        <test-method status="PASS" signature="closeConnection()[pri:0, instance:tests.VerifySetGradesToApplicants@ea4a92b]" name="closeConnection" is-config="true" duration-ms="0" started-at="2015-02-11T14:38:04Z" finished-at="2015-02-11T14:38:04Z">
+        <test-method status="PASS" signature="closeConnection()[pri:0, instance:tests.VerifySetGradesToApplicants@2d928643]" name="closeConnection" is-config="true" duration-ms="0" started-at="2015-02-13T13:54:51Z" finished-at="2015-02-13T13:54:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeConnection -->

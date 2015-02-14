@@ -23,6 +23,7 @@ public class StageGradePage implements INavigationPane{
 	 * @return NewGroupPage
 	 */
 	public StageGradePage setGrade(String grade){
+		inputGrade.clear();
 		inputGrade.sendKeys(grade);
 		return this;
 	}

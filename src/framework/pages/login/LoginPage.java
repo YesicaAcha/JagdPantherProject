@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import framework.common.ConfigConstants;
 import framework.pages.registeredusers.RegisteredUsersPage;
 import framework.webdriver.SeleniumDriverManager;
 
@@ -14,7 +15,7 @@ import framework.webdriver.SeleniumDriverManager;
 */
 public class LoginPage {
 	WebDriver driver;
-
+	
 	@FindBy(id = "j_id_i:userName")
 	WebElement inputEmail;
 
@@ -29,7 +30,7 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 
 		// launch browser and direct it to the Base URL
-		driver.get("http://172.20.200.19:8080");
+		driver.get(ConfigConstants.URL);
 	}
 
 	/**

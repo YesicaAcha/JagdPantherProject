@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import framework.pages.INavigationPane;
 
 public class PeriodDetailsPage implements INavigationPane {
-	@FindBy (linkText = "Etapas")
+	@FindBy (xpath = "//div[@id='j_id_t:applcantStageTabs']/ul/li[2]/a")
 	WebElement stagesButton;
 	
 	@FindBy (id = "j_id_t:applcantStageTabs:j_id_25:0:j_id_2d")

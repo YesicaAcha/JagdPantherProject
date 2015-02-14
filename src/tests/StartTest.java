@@ -3,6 +3,7 @@ package tests;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
+import framework.common.ConfigConstants;
 import framework.pages.HomePage;
 import framework.pages.login.LoginPage;
 
@@ -16,7 +17,7 @@ public class StartTest {
 		LoginPage jagdPantherLogin = new LoginPage();
 
 		//login to application
-		jagdPantherLogin.loginToJagdPanther("admin@admin.com", "admin11");		
+		jagdPantherLogin.loginToJagdPanther(ConfigConstants.USER_MAIL, ConfigConstants.PASSWORD);		
 	}
 	
 	@AfterSuite

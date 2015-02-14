@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.Map;
 
+import framework.common.ConfigConstants;
 import framework.utils.ExternalData;
 
 public class Database {
@@ -20,13 +21,13 @@ public class Database {
 	private static Statement stmt;
 
 	// Constant for Database URL
-	public static String DB_URL = "jdbc:mysql://172.20.200.19/jagdpanther";   
+	public static String DB_URL = ConfigConstants.DB_URL;   
 
 	// Constant for Database Username
-	public static String DB_USER = "panther";
+	public static String DB_USER = ConfigConstants.DB_USER;
 
 	// Constant for Database Password
-	public static String DB_PASSWORD = "panther11";
+	public static String DB_PASSWORD = ConfigConstants.DB_PASSWORD;
 
 	/**
 	 * This method is used to connect to the database
@@ -144,36 +145,59 @@ public class Database {
 		executeDelete("jp_user", "CI!= 123");
 	}
 
+	private void createNewElementDB (String tableName, String values) throws SQLException {
+		String query = "INSERT INTO " + tableName + " VALUES " + values +";";
+		stmt.execute(query);
+	}
+
 	public void createProgramsByBD() throws Exception {
 		List<Map<String, String>> programsXLS = externalData.readExternalProgramData();
-		System.out.println("Starting to create Programs......");
 		for (Map<String, String> programInfo : programsXLS) {
-			createNewProgramDB (programInfo.get("ProgramName"), programInfo.get("ProgramTitle"), programInfo.get("ProgramDescription"));
+			String values = "("+ getNextUsableCode("PROGRAM") +",'"+ programInfo.get("ProgramDescription") + "','" + programInfo.get("ProgramName") +"','" + programInfo.get("ProgramTitle") + "')";
+			createNewElementDB("PROGRAM", values);
 		}
-		System.out.println("Finishing the creation of Programs......");
 	}
-	
-	//TODO Refactor
-	public void createStagesDB() throws SQLException {
-		String query = "INSERT INTO `stage` VALUES (1,'stageDescription',80,'stageName', 'stageTitle', 1);";
-		stmt.execute(query);
+
+	public void createStagesDB() throws Exception {
+		List<Map<String, String>> stagesXLS = externalData.readExternalStageData();
+		for (Map<String, String> stageInfo : stagesXLS ) {
+			String values = "("+ getNextUsableCode("STAGE") +",'"+ stageInfo.get("DESCRIPTION") + "'," + stageInfo.get("MINGRADE") + ",'" + stageInfo.get("NAME") +"','" + stageInfo.get("TITLE") + "'," + stageInfo.get("TYPE") + ")";
+			createNewElementDB("STAGE", values);
+		}
 	}
-	
-	public void createGroupDB() throws SQLException {
-		String query = "INSERT INTO `jp_group` VALUES (1,'groupDescription','groupName', 0, 'groupTitle', 1);";
-		stmt.execute(query);
-		query = "INSERT INTO `group_stage` VALUES (1, 1)";
-		stmt.execute(query);
+
+	public void createGroupDB() throws Exception {
+		List<Map<String, String>> groupsXLS = externalData.readExternalGroupData();
+		for (Map<String, String> groupsInfo : groupsXLS ) {
+			String values = "("+ getNextUsableCode("JP_GROUP") +",'"+ groupsInfo.get("DESCRIPTION") 
+					+ "','" + groupsInfo.get("NAME") + "'," + groupsInfo.get("ORDERINLIST") +",'" 
+					+ groupsInfo.get("TITLE") + "'," + getCode("PROGRAM", groupsInfo.get("PROGRAM")) + ")";
+			createNewElementDB("jp_group", values);
+			values = "("+ getCode("JP_GROUP", groupsInfo.get("NAME")) + ","+getCode("STAGE", groupsInfo.get("STAGE")) + ")";
+			createNewElementDB("GROUP_STAGE", values);
+		}
 	}
-	
-	public void createPeriodDB() throws SQLException {
-		String query = "INSERT INTO `jp_period` VALUES (1, NULL,'2015-02-02', 'periodName', 'ACTIVE', 1);";
+
+	public void createPeriodDB() throws SQLException, Exception {
+		String query = "INSERT INTO `jp_period` VALUES (1, NULL, '2015-02-02', 'periodName', 'ACTIVE', 1);";
 		stmt.execute(query);
 		query = "INSERT INTO `stage_value` VALUES (1, 80, 1, 1);";
 		stmt.execute(query);
-		
-	}
 	
+		//TODO: colocar un if para asociar distintas etapas a un periodo en la tabla STAGE_VALUE\
+		//Si el nombre del periodo ya existe no debe crearlo de nuevo
+		List<Map<String, String>> periodsXLS = externalData.readExternalPeriodData();
+		for (Map<String, String> periodInfo : periodsXLS ) {
+			String values = "("+ getNextUsableCode("JP_PERIOD") +", NULL, '" + periodInfo.get("INITIALDATE") 
+					+ "','" + periodInfo.get("NAME") + "','" + periodInfo.get("PERIODSTATE") + "'," 
+					+ getCode("PROGRAM", periodInfo.get("PROGRAM")) + ")";
+			createNewElementDB("JP_PERIOD", values);
+			values = "("+ getNextUsableCode("STAGE_VALUE") +", " + periodInfo.get("MINVALUE") 
+					+ "," + getCode("STAGE", periodInfo.get("STAGE")) + "," + getCode("JP_PERIOD", periodInfo.get("NAME")) + ")";
+			createNewElementDB("STAGE_VALUE", values);
+		}
+	}
+
 	public void createApplicantDB() throws SQLException{
 		String query = "INSERT INTO `JP_USER` VALUES (4902260,'Applicant',1,0,NULL,NULL,NULL,'yesica@acha.com','applicantLastname','applicantName',NULL,NULL,NULL,NULL,2,NULL,NULL,NULL,NULL,NULL);";
 		stmt.execute(query);
@@ -181,16 +205,12 @@ public class Database {
 		stmt.execute(query);
 	}
 
-	//TODO: Refactor the code to have createNewElementDB 
-	private void createNewProgramDB(String programName, String programTitle, String programDescription) throws Exception {
-
-		String query = "INSERT INTO `PROGRAM` VALUES ("+ getNextUsableProgramCode() +",'"+programDescription+ "','" + programName+"','" + programTitle + "')";
-		stmt.execute(query);
+	public String getApplicantGrade(String ci) throws Exception{
+		return getDataFromTable("GRADEVALUE", "stage_grade", "WHERE APPLICANT_CI = 4902260 and STAGEVALUE_ID = 1 order by id desc limit 1");
 	}
-
-	public String getNextUsableProgramCode() throws Exception{
-		String lastCodeDB = getDataFromTable("ID", "program", "ORDER BY ID desc limit 1");
-		System.out.println(lastCodeDB);
+	
+	public String getNextUsableCode(String tableName) throws Exception{
+		String lastCodeDB = getDataFromTable("ID", tableName, "ORDER BY ID desc limit 1");
 		int code;
 		if (lastCodeDB == null) {
 			code = 1;
@@ -200,6 +220,31 @@ public class Database {
 		return code + "";
 	}
 
+	public String getCode(String tableName, String name) throws Exception {
+		return getDataFromTable("ID", tableName, "WHERE NAME = '" + name +"';");
+	}
+
+	public void deleteDataFromDB() throws SQLException{
+		//		deleteDataFromUserTable();
+			
+		//		
+		String query = "DELETE FROM STAGE_GRADE WHERE APPLICANT_CI = 4902260 and STAGEVALUE_ID = 1;";
+		stmt.execute(query);
+		query = "DELETE FROM USER_PERIOD WHERE PERIOD_ID = 1;";
+		stmt.execute(query);
+		query = "DELETE FROM JP_USER where CI = 4902260;";
+		stmt.execute(query);
+		query = "DELETE FROM STAGE_VALUE WHERE PERIOD_ID = 1;";
+		stmt.execute(query);
+		query = "DELETE FROM JP_PERIOD WHERE ID = 1;";
+		stmt.execute(query);
+		query = "DELETE FROM GROUP_STAGE WHERE GROUP_ID = 1;";
+		stmt.execute(query);
+		query = "DELETE FROM JP_GROUP WHERE ID >= 1;";
+		stmt.execute(query);
+		deleteDataFromProgramTable();
+		deleteDataFromStageTable();		
+	}
 	/**
 	 * This method close the connection with the database
 	 * @throws Exception

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<configuration>
+	<FrameworkInformation>
+		<BROWSER>FirefoxDriver</BROWSER>
+		<USER_MAIL>admin@admin.com</USER_MAIL>
+		<PASSWORD>admin11</PASSWORD>
+		<URL>http://172.20.200.19:8080</URL>
+	</FrameworkInformation>
+	<DBInformation>
+		<DB_URL>jdbc:mysql://172.20.200.19/jagdpanther</DB_URL>
+		<DB_USER>panther</DB_USER>
+		<DB_PASSWORD>panther11</DB_PASSWORD>
+	</DBInformation>
+</configuration>
